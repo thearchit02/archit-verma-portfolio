@@ -130,10 +130,20 @@ class PortfolioApp {
         const experiences = config.get('experience', []);
         if (experiences.length === 0) return 2;
         
-        const firstExp = experiences[experiences.length - 1];
-        const startYear = firstExp.period ? parseInt(firstExp.period.split(' ')[1]) : new Date().getFullYear() - 2;
+        // Extract all four-digit years from experience periods using regex
+        const yearRegex = /\b(19|20)\d{2}\b/g;
+        const allYears = experiences
+            .flatMap(exp => {
+                if (!exp.period) return [];
+                const matches = exp.period.match(yearRegex);
+                return matches ? matches.map(y => parseInt(y, 10)) : [];
+            });
+        
+        // Use the maximum (most recent) year as the start point
+        if (allYears.length === 0) return 2;
+        const maxYear = Math.max(...allYears);
         const currentYear = new Date().getFullYear();
-        return currentYear - startYear;
+        return currentYear - maxYear;
     }
 
     renderExperience() {
@@ -368,6 +378,13 @@ class PortfolioApp {
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach(entry => {
+                    // Toggle in-view class for visual header alignment
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    } else {
+                        entry.target.classList.remove('in-view');
+                    }
+
                     if (entry.isIntersecting) {
                         const id = entry.target.getAttribute('id');
                         navLinks.forEach(link => {

@@ -346,6 +346,7 @@
 .section-header {
     text-align: center;
     margin-bottom: var(--spacing-2xl);
+    transition: all var(--transition-base);
 }
 
 .section-title {
@@ -355,6 +356,15 @@
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
     color: var(--color-text-primary);
+}
+
+/* When a section is in view, move header and subtitle to the left */
+.section.in-view .section-header {
+    text-align: left;
+}
+
+.section.in-view .section-title {
+    justify-content: flex-start;
 }
 
 .section-title i {
@@ -367,6 +377,36 @@
     font-size: 1.125rem;
     max-width: 600px;
     margin: 0 auto;
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.section.in-view .section-subtitle {
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+}
+
+/* Smooth slide/opacity transitions for header/title/subtitle */
+.section-header,
+.section-title,
+.section-subtitle {
+    transition: transform var(--transition-base), opacity var(--transition-base);
+    will-change: transform, opacity;
+}
+
+/* Subtle centered state (before in-view) */
+.section .section-title,
+.section .section-subtitle {
+    transform: translateX(0);
+    opacity: 0.95;
+}
+
+/* When section becomes active, nudge left and fully opaque */
+.section.in-view .section-title,
+.section.in-view .section-subtitle {
+    transform: translateX(-12px);
+    opacity: 1;
 }
 
 /* Dashboard Cards */
@@ -595,6 +635,10 @@
 .pipeline-arrow {
     color: var(--color-accent);
     font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 /* Timeline */
