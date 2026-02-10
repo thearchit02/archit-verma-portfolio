@@ -1,0 +1,122 @@
+{
+  "site": {
+    "title": "Archit Verma",
+    "description": "Software / BI Automation Engineer with 2+ years experience in backend services, automation platforms, and analytics systems.",
+    "keywords": "backend engineer, BI automation, AI integration, Java, Python, SQL, Power BI, LangGraph",
+    "author": "Archit Verma",
+    "language": "en"
+  },
+  
+  "personal": {
+    "name": "Archit Verma",
+    "role": "Backend / BI Automation / AI Engineer",
+    "location": "KOL, IND",
+    "email": "reachoutarchit@gmail.com",
+    "availability": "Open to Opportunities"
+  },
+  
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/archit-verma-02/",
+    "github": "https://github.com/thearchit02",
+    "resume": "assets/docs/Resume-Archit.pdf"
+  },
+  
+  "sections": {
+    "summary": {
+      "title": "System Overview",
+      "icon": "brain-circuit"
+    },
+    "experience": {
+      "title": "Experience Pipeline",
+      "icon": "project-diagram"
+    },
+    "projects": {
+      "title": "Project Portfolio",
+      "icon": "code-branch"
+    },
+    "skills": {
+      "title": "Technical Architecture",
+      "icon": "layer-group"
+    },
+    "education": {
+      "title": "Education & Certifications",
+      "icon": "graduation-cap"
+    }
+  },
+  
+  "experience": [
+    {
+      "title": "Product Engineer",
+      "company": "Cognizant",
+      "period": "Dec 2024 – Present",
+      "status": "current",
+      "achievements": [
+        "Designed Java backend services for BI report/metadata automation",
+        "Built AI-powered migration workflows using Python and LangGraph",
+        "Integrated AI workflows with Java services and TypeScript UI",
+        "Implemented Git-based CI/CD pipelines for production deployment"
+      ]
+    },
+    {
+      "title": "Trainee",
+      "company": "Cognizant",
+      "period": "Dec 2023 – Nov 2024",
+      "achievements": [
+        "Gained expertise in Java, SQL, and Tableau",
+        "Supported BI automation and analytics engineering",
+        "Learned enterprise development practices"
+      ]
+    }
+  ],
+  
+  "projects": [
+    {
+      "title": "AI-Powered BI Migration Platform",
+      "description": "AI-assisted migration workflows automating BI asset transitions with validation and integration",
+      "status": "production",
+      "technologies": ["Python", "LangGraph", "Java", "TypeScript", "Power BI"],
+      "features": [
+        "AI workflow orchestration using LangGraph",
+        "Java backend microservices integration",
+        "TypeScript-based UI for guided migrations",
+        "Power BI and Tableau compatibility"
+      ]
+    }
+  ],
+  
+  "skills": {
+    "backend": ["Java", "Python", "TypeScript", "REST APIs", "Spring Boot", "Microservices"],
+    "data_bi": ["SQL", "Data Modeling", "Power BI", "Tableau", "Qlik Sense", "BI Automation"],
+    "ai_automation": ["LangGraph", "AI Workflow Orchestration", "Automation Systems"],
+    "practices": ["CI/CD", "Git", "Enterprise Development", "System Design"]
+  },
+  
+  "education": [
+    {
+      "degree": "Bachelor's Of Technology",
+      "institution": "Rajiv Gandhi Proudyogiki Vishwavidyalaya",
+      "period": "2019 – 2023"
+    }
+  ],
+  
+  "contact": {
+    "email": "reachoutarchit@gmail.com",
+    "copyright": "© 2026 Archit Verma. All rights reserved.",
+    "version": "1.0.0",
+    "build_date": "2026-02-11"
+  },
+  
+  "ui": {
+    "theme": {
+      "primary": "#06d6a0",
+      "secondary": "#3b82f6",
+      "accent": "#8b5cf6",
+      "background": "#0a0e17",
+      "surface": "#151f30"
+    },
+    "animation": {
+      "enabled": true,
+      "duration": "300ms"
+    }
+  }
+}
