@@ -91,6 +91,7 @@ class PortfolioApp {
         this.renderSkills();
         this.renderEducation();
         this.renderMetrics();
+        this.renderSocialLinks();
         this.setupDownloadLinks();
     }
 
@@ -181,24 +182,45 @@ class PortfolioApp {
         
         projectsGrid.innerHTML = projects.map(project => `
             <div class="project-card">
-                <span class="project-status ${project.status || 'production'}">
-                    ${(project.status || 'production').toUpperCase()}
-                </span>
                 <div class="project-header">
                     <h3 class="project-title">${project.title}</h3>
-                    <p class="project-description">${project.description}</p>
+                    <span class="project-status-badge">
+                        <i class="fas fa-${project.status === 'production' ? 'rocket' : 'cogs'}"></i>
+                        ${(project.status || 'production').toUpperCase()}
+                    </span>
                 </div>
-                <div class="project-body">
-                    <div class="project-tech">
-                        ${project.technologies ? project.technologies.map(tech => `
-                            <span class="tech-tag">${tech}</span>
+                
+                <p class="project-description">${project.description}</p>
+                
+                <div class="project-meta">
+                    ${project.period ? `<span class="project-period"><i class="fas fa-calendar"></i>${project.period}</span>` : ''}
+                    ${project.impact ? `<span class="project-impact"><i class="fas fa-chart-line"></i>${project.impact}</span>` : ''}
+                </div>
+                
+                ${project.highlights ? `
+                    <div class="project-highlights">
+                        ${project.highlights.map(highlight => `
+                            <div class="highlight-item">
+                                <i class="fas fa-check"></i>
+                                ${highlight}
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
+                
+                <div class="project-features">
+                    <div class="features-label">Key Features</div>
+                    <div class="feature-list">
+                        ${project.features ? project.features.map(feature => `
+                            <span class="feature-item">${feature}</span>
                         `).join('') : ''}
                     </div>
-                    <ul class="project-features">
-                        ${project.features ? project.features.map(feature => `
-                            <li>${feature}</li>
-                        `).join('') : ''}
-                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    ${project.technologies ? project.technologies.map(tech => `
+                        <span class="tech-tag">${tech}</span>
+                    `).join('') : ''}
                 </div>
             </div>
         `).join('');
@@ -272,6 +294,36 @@ class PortfolioApp {
         `).join('');
     }
 
+    renderSocialLinks() {
+        const links = config.get('links', {});
+        const socialLinksContainer = document.getElementById('socialLinks');
+        
+        if (!socialLinksContainer) return;
+        
+        const socialConfig = [
+            { key: 'email', icon: 'fas fa-envelope', label: 'Email' },
+            { key: 'linkedin', icon: 'fab fa-linkedin', label: 'LinkedIn' },
+            { key: 'github', icon: 'fab fa-github', label: 'GitHub' },
+            { key: 'hackerrank', icon: 'fab fa-hackerrank', label: 'HackerRank' },
+            { key: 'codechef', icon: 'fab fa-codepen', label: 'CodeChef' }
+        ];
+        
+        socialLinksContainer.innerHTML = socialConfig
+            .filter(social => links[social.key])
+            .map(social => `
+                <div class="social-link-wrapper">
+                    <a href="${links[social.key]}" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="${social.label}">
+                        <i class="${social.icon}"></i>
+                    </a>
+                    <span class="social-link-label">${social.label}</span>
+                </div>
+            `).join('');
+    }
+    
     setupDownloadLinks() {
         const links = config.get('links', {});
         
@@ -291,24 +343,6 @@ class PortfolioApp {
             });
         }
         
-        // Contact links
-        const contactEmail = document.getElementById('contactEmail');
-        if (contactEmail) {
-            contactEmail.href = `mailto:${config.get('personal.email', '')}`;
-        }
-        
-        const contactLinkedin = document.getElementById('contactLinkedin');
-        if (contactLinkedin && links.linkedin) {
-            contactLinkedin.href = links.linkedin;
-            contactLinkedin.target = '_blank';
-        }
-        
-        const contactGithub = document.getElementById('contactGithub');
-        if (contactGithub && links.github) {
-            contactGithub.href = links.github;
-            contactGithub.target = '_blank';
-        }
-        
         // Update copyright
         const copyrightElement = document.getElementById('copyright');
         if (copyrightElement) {
@@ -321,6 +355,7 @@ class PortfolioApp {
             versionElement.textContent = config.get('contact.version', '1.0.0');
         }
     }
+
 
     downloadResume(url) {
         const link = document.createElement('a');

@@ -8,11 +8,12 @@ A modern, responsive portfolio website built with vanilla HTML, CSS, and JavaScr
 
 - **Responsive Design** – Mobile-first approach with breakpoints for all screen sizes
 - **Dark/Light Theme Toggle** – Theme preference persisted to localStorage
-- **Dynamic Content Loading** – All content driven by `config/config.json`
+- **Dynamic Content Loading** – All content driven from `config/config.json`
 - **Smooth Navigation** – Active section tracking with Intersection Observer API
 - **Terminal-Inspired UI** – Aesthetic design with system/engineering theme
 - **IST Time Display** – Real-time IST timezone clock in navbar
 - **Production Ready** – Clean, modular code structure with ES6 modules
+- **Beautiful Animations** – Smooth transitions and interactive elements
 
 ---
 
@@ -30,22 +31,27 @@ A modern, responsive portfolio website built with vanilla HTML, CSS, and JavaScr
 ## 📁 Project Structure
 
 ```
-my-portfolio/
-├── index.html              # Main HTML template
-├── README.md               # This file
+archit-portfolio/
+├── index.html                      # Main HTML template
+├── README.md                       # Project documentation
+│
 ├── config/
-│   └── config.json         # All content & settings (edit this!)
+│   └── config.json                # All content & settings (edit this!)
+│
 ├── css/
-│   ├── style.css           # Global styles & CSS variables
-│   └── components.css      # Component-specific styles
+│   ├── style.css                  # Global styles & CSS variables
+│   └── components.css             # Component-specific styles
+│
 ├── js/
-│   ├── config.js           # Config loader & manager
-│   ├── theme.js            # Dark/light theme handler
-│   └── main.js             # Main app logic & DOM rendering
+│   ├── config.js                  # Config loader & manager
+│   ├── theme.js                   # Dark/light theme handler
+│   └── main.js                    # Main app logic & DOM rendering
+│
 └── assets/
     ├── docs/
-    │   └── Resume-Archit.pdf
-    └── icons/              # Optional icon assets
+    │   ├── Resume-Archit.pdf
+    │   └── messages.json          # Message structure reference ⭐
+    └── icons/                     # Optional icon assets
 ```
 
 ---
