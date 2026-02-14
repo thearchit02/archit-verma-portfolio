@@ -64,8 +64,8 @@
     --transition-slow: 900ms cubic-bezier(0.22, 1, 0.36, 1);
     
     /* Container */
-    --container-max-width: 1600px;
-    --container-padding: 0.75rem;
+    --container-max-width: 1200px;
+    --container-padding: 1rem;
 }
 
 /* Light Theme */
@@ -163,6 +163,25 @@ pre {
     max-width: var(--container-max-width);
     margin: 0 auto;
     padding: 0 var(--container-padding);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 0 var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
 }
 
 /* Utility Classes */

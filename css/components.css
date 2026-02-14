@@ -343,28 +343,37 @@
     padding: var(--spacing-3xl) 0;
 }
 
+/* Animate section headers into view */
 .section-header {
-    text-align: center;
     margin-bottom: var(--spacing-2xl);
-    transition: all var(--transition-base);
+    
+    /* Initial state: off-screen to the right and invisible */
+    opacity: 0;
+    transform: translateX(100px);
+    
+    /* Animation properties */
+    transition: opacity 0.8s ease-out, transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+    will-change: opacity, transform;
+    
+    /* Default alignment before animation */
+    text-align: center;
+}
+
+.section.in-view .section-header {
+    /* Final state: in position, visible, and aligned left */
+    opacity: 1;
+    transform: translateX(0);
+    text-align: left;
 }
 
 .section-title {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: inherit; /* Inherits text-align from parent for flex justification */
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
     color: var(--color-text-primary);
-}
-
-/* When a section is in view, move header and subtitle to the left */
-.section.in-view .section-header {
-    text-align: left;
-}
-
-.section.in-view .section-title {
-    justify-content: flex-start;
+    transition: justify-content var(--transition-slow); /* Allows smooth-ish transition of content */
 }
 
 .section-title i {
@@ -376,37 +385,13 @@
     color: var(--color-text-muted);
     font-size: 1.125rem;
     max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-    transition: all var(--transition-base);
+    margin: 0 auto; /* Centering for the non-in-view state */
+    transition: all var(--transition-slow);
 }
 
 .section.in-view .section-subtitle {
     max-width: 100%;
-    margin: 0;
-    text-align: left;
-}
-
-/* Smooth slide/opacity transitions for header/title/subtitle */
-.section-header,
-.section-title,
-.section-subtitle {
-    transition: transform var(--transition-base), opacity var(--transition-base);
-    will-change: transform, opacity;
-}
-
-/* Subtle centered state (before in-view) */
-.section .section-title,
-.section .section-subtitle {
-    transform: translateX(0);
-    opacity: 0.95;
-}
-
-/* When section becomes active, nudge left and fully opaque */
-.section.in-view .section-title,
-.section.in-view .section-subtitle {
-    transform: translateX(-12px);
-    opacity: 1;
+    margin: 0; /* Resets margin for left alignment */
 }
 
 /* Dashboard Cards */
@@ -437,6 +422,30 @@
 
 .pipeline-card {
     grid-column: 1 / -1;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .architecture-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .education-grid,
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1275,5 +1284,27 @@
     
     .section {
         padding: var(--spacing-2xl) 0;
+    }
+    
+    /* Responsive Grids */
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .architecture-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .education-grid,
+    .certifications-grid {
+        grid-template-columns: 1fr;
     }
 }

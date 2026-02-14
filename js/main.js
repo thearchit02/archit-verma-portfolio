@@ -443,16 +443,27 @@ class PortfolioApp {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
         
-        const observer = new IntersectionObserver(
+        // Observer for header animations (triggers earlier)
+        const animationObserver = new IntersectionObserver(
             (entries) => {
                 entries.forEach(entry => {
-                    // Toggle in-view class for visual header alignment
                     if (entry.isIntersecting) {
                         entry.target.classList.add('in-view');
                     } else {
                         entry.target.classList.remove('in-view');
                     }
-
+                });
+            },
+            {
+                threshold: 0.1, // Trigger when 10% is visible
+                rootMargin: '-10% 0px -10% 0px' // A less aggressive margin
+            }
+        );
+        
+        // Observer for navigation updates (needs more visibility)
+        const navObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const id = entry.target.getAttribute('id');
                         navLinks.forEach(link => {
@@ -471,7 +482,10 @@ class PortfolioApp {
             }
         );
         
-        sections.forEach(section => observer.observe(section));
+        sections.forEach(section => {
+            animationObserver.observe(section);
+            navObserver.observe(section);
+        });
     }
 
     showConsoleGreeting() {
