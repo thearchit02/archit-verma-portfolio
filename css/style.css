@@ -64,7 +64,7 @@
     --transition-slow: 900ms cubic-bezier(0.22, 1, 0.36, 1);
     
     /* Container */
-    --container-max-width: 1200px;
+    --container-max-width: 1600px;
     --container-padding: 1rem;
 }
 
