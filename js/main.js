@@ -90,6 +90,7 @@ class PortfolioApp {
         this.renderProjects();
         this.renderSkills();
         this.renderEducation();
+        this.renderCertifications();
         this.renderMetrics();
         this.renderSocialLinks();
         this.setupDownloadLinks();
@@ -128,6 +129,13 @@ class PortfolioApp {
     }
 
     calculateExperienceYears() {
+        const personal = config.get('personal', {});
+        
+        // Use explicit experienceYears if provided
+        if (personal.experienceYears) {
+            return personal.experienceYears;
+        }
+        
         const experiences = config.get('experience', []);
         if (experiences.length === 0) return 2;
         
@@ -164,6 +172,7 @@ class PortfolioApp {
                         <span class="timeline-period">${exp.period}</span>
                     </div>
                     <div class="timeline-company">${exp.company}</div>
+                    ${exp.subtitle ? `<div class="timeline-subtitle">${exp.subtitle}</div>` : ''}
                     <ul class="timeline-achievements">
                         ${exp.achievements ? exp.achievements.map(ach => `
                             <li>${ach}</li>
@@ -233,9 +242,11 @@ class PortfolioApp {
         if (!skillsGrid) return;
         
         const skillCategories = [
-            { key: 'backend', icon: 'server', title: 'Backend Core' },
-            { key: 'data_bi', icon: 'database', title: 'Data & BI' },
-            { key: 'ai_automation', icon: 'robot', title: 'AI & Automation' },
+            { key: 'languages', icon: 'code', title: 'Languages' },
+            { key: 'backend_frameworks', icon: 'server', title: 'Backend & Frameworks' },
+            { key: 'data_database', icon: 'database', title: 'Data & Database' },
+            { key: 'ai_innovation', icon: 'robot', title: 'AI & Innovation' },
+            { key: 'tools_platforms', icon: 'wrench', title: 'Tools & Platforms' },
             { key: 'practices', icon: 'cogs', title: 'Engineering Practices' }
         ];
         
@@ -263,10 +274,32 @@ class PortfolioApp {
         if (!educationGrid) return;
         
         educationGrid.innerHTML = education.map(edu => `
-            <div class="education-card">
+            <div class="education-card degree-card">
+                <div class="degree-badge">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
                 <h3 class="education-degree">${edu.degree}</h3>
                 <div class="education-institution">${edu.institution}</div>
                 <div class="education-period">${edu.period}</div>
+                ${edu.description ? `<div class="education-description">${edu.description}</div>` : ''}
+            </div>
+        `).join('');
+    }
+
+    renderCertifications() {
+        const certifications = config.get('certifications', []);
+        const certificationsGrid = document.getElementById('certificationsGrid');
+        
+        if (!certificationsGrid) return;
+        
+        certificationsGrid.innerHTML = certifications.map(cert => `
+            <div class="education-card certification-card">
+                <div class="certification-badge">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3 class="certification-name">${cert.certification}</h3>
+                <div class="certification-issuer">${cert.issuer}</div>
+                ${cert.category ? `<div class="certification-category"><span class="category-tag">${cert.category}</span></div>` : ''}
             </div>
         `).join('');
     }

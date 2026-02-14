@@ -741,6 +741,16 @@
     margin-bottom: var(--spacing-md);
 }
 
+.timeline-subtitle {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+    border-left: 2px solid var(--color-secondary);
+    padding-left: var(--spacing-md);
+}
+
 .timeline-achievements {
     list-style: none;
 }
@@ -932,20 +942,68 @@
     gap: var(--spacing-xl);
 }
 
+/* Certifications Grid */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+}
+
 .education-card {
     background-color: var(--color-bg-card);
     border-radius: var(--radius-xl);
     border: 1px solid var(--color-border);
     padding: var(--spacing-lg);
+    transition: all var(--transition-base);
+    position: relative;
 }
 
-.education-degree {
+.education-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.degree-card {
+    border-left: 4px solid var(--color-primary);
+}
+
+.certification-card {
+    border-left: 4px solid var(--color-secondary);
+}
+
+.degree-badge,
+.certification-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+}
+
+.degree-badge {
+    background-color: rgba(6, 214, 160, 0.1);
+    color: var(--color-primary);
+}
+
+.certification-badge {
+    background-color: rgba(59, 130, 246, 0.1);
+    color: var(--color-secondary);
+}
+
+.education-degree,
+.certification-name {
     font-size: 1.25rem;
     color: var(--color-text-primary);
     margin-bottom: var(--spacing-sm);
+    font-weight: 600;
 }
 
-.education-institution {
+.education-institution,
+.certification-issuer {
     color: var(--color-primary);
     font-weight: 600;
     margin-bottom: var(--spacing-xs);
@@ -955,6 +1013,32 @@
     font-family: var(--font-family-mono);
     font-size: 0.875rem;
     color: var(--color-text-muted);
+    margin-bottom: var(--spacing-md);
+}
+
+.education-description {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-sm);
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--color-border);
+}
+
+.certification-category {
+    margin-top: var(--spacing-md);
+}
+
+.category-tag {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-secondary);
+    border-radius: var(--radius-full);
+    font-family: var(--font-family-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* Contact Section */

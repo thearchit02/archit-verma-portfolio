@@ -1,18 +1,20 @@
 {
   "site": {
-    "title": "Archit Verma - Backend Engineer",
-    "description": "Software / BI Automation Engineer with 2+ years experience in backend services, automation platforms, and analytics systems.",
-    "keywords": "backend engineer, BI automation, AI integration, Java, Python, SQL, Power BI, LangGraph",
+    "title": "Archit Verma - Software & Data Engineer",
+    "description": "Software & Data Engineer with 2+ years of experience building backend systems and automation tools for enterprise-scale BI migration. Expertise in Java, Python, metadata processing, and AI-assisted workflow solutions.",
+    "keywords": "Software Engineer, Data Engineer, BI Migration, Java, Python, TypeScript, SQL, Power BI, Tableau, Qlik, LangGraph, Metadata Processing",
     "author": "Archit Verma",
     "language": "en"
   },
   
   "personal": {
     "name": "Archit Verma",
-    "role": "Backend / BI Automation / AI Engineer",
+    "role": "Software & Data Engineer",
     "location": "KOL, IND",
     "email": "reachoutarchit@gmail.com",
-    "availability": "Open to Opportunities"
+    "availability": "Open to Opportunities",
+    "experienceYears": 2,
+    "summary": "Software & Data Engineer with 2+ years of experience (2023–2026) building backend systems and automation tools for enterprise-scale BI migration. Expertise in Java, Python, and metadata processing, translating complex BI models across Tableau, Power BI, and Qlik Sense into migration-ready artifacts. Proven track record in developing rule-driven automation engines and contributing to AI-assisted workflow solutions to drive platform modernization."
   },
   
   "links": {
@@ -42,8 +44,12 @@
       "icon": "layer-group"
     },
     "education": {
-      "title": "Education & Certifications",
+      "title": "Education",
       "icon": "graduation-cap"
+    },
+    "certifications": {
+      "title": "Certifications & Credentials",
+      "icon": "certificate"
     }
   },
   
@@ -51,95 +57,89 @@
     {
       "title": "Product Engineer",
       "company": "Cognizant",
-      "period": "Dec 2024 – Present",
+      "period": "Dec 2023 – Present",
       "status": "current",
+      "subtitle": "Backend Development for BI Migration Platform",
       "achievements": [
-        "Designed Java backend services for BI report/metadata automation",
-        "Built AI-powered migration workflows using Python and LangGraph",
-        "Integrated AI workflows with Java services and TypeScript UI",
-        "Implemented Git-based CI/CD pipelines for production deployment"
-      ]
-    },
-    {
-      "title": "Trainee",
-      "company": "Cognizant",
-      "period": "Dec 2023 – Nov 2024",
-      "achievements": [
-        "Gained expertise in Java, SQL, and Tableau",
-        "Supported BI automation and analytics engineering",
-        "Learned enterprise development practices"
+        "Designed and developed Java-based backend utilities to automate the migration of BI reports and semantic models across Tableau, Power BI, and Qlik Sense ecosystems",
+        "Built a robust metadata extraction engine to parse BI model files, capturing data sources, schemas, tables, columns, and transformations for downstream migration workflows",
+        "Enabled secure validation by replicating client database schemas with dummy data in internal environments, allowing full BI migration testing without accessing production data",
+        "Developed a rule-based complexity analysis engine in Java to evaluate report structure, transformations, and interdependencies, directly supporting migration planning and effort estimation",
+        "Enhanced estimation accuracy by preparing structured BI metadata for AI models, enabling AI-assisted evaluation of migration complexity and risk",
+        "Contributed to early-stage research on an AI-powered BI migration solution using Python, LangGraph, and multi-agent workflows, focusing on automation feasibility and orchestrating report conversion",
+        "Collaborated with cross-functional teams using Git and CI/CD to deliver production-ready features, converting Tableau metadata (.tds, .twb) into staging artifacts for Power BI semantic model generation"
       ]
     }
   ],
   
   "projects": [
     {
-      "title": "AI-Powered BI Migration Platform",
-      "description": "Enterprise-grade AI-assisted migration workflows automating BI asset transitions with intelligent validation and deep system integration",
+      "title": "BI Migration & Automation Platform",
+      "description": "Enterprise-grade backend utilities for automating BI asset migration across Tableau, Power BI, and Qlik Sense ecosystems. Core system handling metadata extraction, schema validation, and report conversion at scale.",
       "status": "production",
-      "period": "Dec 2024 – Present",
-      "impact": "Reduced migration time by 60%, eliminated manual asset mapping errors, enabled 15+ enterprise migrations",
-      "technologies": ["Python", "LangGraph", "Java", "TypeScript", "Power BI", "PostgreSQL", "REST APIs"],
+      "period": "2023 – Present",
+      "impact": "Streamlined automated report publishing, reduced manual migration effort, enabled enterprise-scale BI transformations",
+      "technologies": ["Java", "Python", "TypeScript", "Power BI", "Tableau", "Qlik Sense", "REST APIs"],
       "features": [
-        "AI workflow orchestration using LangGraph for intelligent decision-making",
-        "Java microservices handling async batch processing and metadata transformation",
-        "TypeScript React UI with real-time progress tracking and error recovery",
-        "Power BI & Tableau compatibility with automated metadata extraction",
-        "Advanced validation engine with 99.2% accuracy rate",
-        "Git-based deployment pipeline with automated testing"
+        "Java backend utilities parsing Tableau files (.tds, .twb) to generate Power BI semantic models",
+        "Robust metadata extraction engine capturing data sources, schemas, tables, columns, and transformations",
+        "Automated conversion of Tableau metadata into staging artifacts for Power BI semantic model generation",
+        "Multi-source BI platform support (Tableau, Power BI Service, Qlik Sense)",
+        "TypeScript integration for downstream UI and workflow orchestration",
+        "Git-based CI/CD deployment pipeline for production releases"
       ],
-      "highlights": ["60% faster migrations", "99.2% accuracy", "Real-time monitoring", "Enterprise-scale"]
+      "highlights": ["Tableau-to-Power BI conversion", "Multi-platform support", "Automated publishing", "Enterprise-ready"]
     },
     {
-      "title": "BI Automation Framework - Report Scheduler",
-      "description": "Robust automation framework for scheduling and executing BI reports with enterprise-level error handling and notifications",
+      "title": "BI Complexity Analysis Engine",
+      "description": "Intelligent Java-based system for analyzing and estimating BI report complexity, transformations, and migration effort. Directly supports migration planning, resource allocation, and risk assessment.",
       "status": "production",
-      "period": "Oct 2024 – Dec 2024",
-      "impact": "Automated 200+ monthly report executions, reduced manual effort by 80%, enabled 24/7 scheduling",
-      "technologies": ["Java", "Spring Boot", "SQL", "Scheduler", "Notification APIs"],
+      "period": "2025",
+      "impact": "Enhanced migration estimation accuracy, reduced planning overhead, enabled data-driven effort forecasting",
+      "technologies": ["Java", "Rule-Based Systems", "BI Metadata Analysis"],
       "features": [
-        "RESTful API for report scheduling with cron expression support",
-        "Multi-tier error handling with automatic retry logic",
-        "Email & Slack notification integrations",
-        "Database transaction management with rollback capabilities",
-        "Performance monitoring and audit logging",
-        "Role-based access control"
+        "Rule-based analysis engine evaluating report structure and complexity",
+        "Transformation interdependency mapping and dependency graph generation",
+        "Metadata structuring for AI model consumption and analysis",
+        "Integration with AI models for assisted complexity evaluation and risk scoring",
+        "Quantitative effort estimation based on historical patterns",
+        "Decision support for migration prioritization and resource planning"
       ],
-      "highlights": ["80% efficiency gain", "200+ reports/month", "Zero downtime", "Full auditability"]
+      "highlights": ["Intelligent analysis", "AI-assisted evaluation", "Effort estimation", "Risk assessment"]
     },
     {
-      "title": "Data Pipeline & ETL System",
-      "description": "High-performance ETL platform processing 500K+ records daily with real-time validation and incremental updates",
+      "title": "Secure BI Schema Replication System",
+      "description": "Automated system for replicating client database schemas with dummy data, enabling full BI migration testing in internal environments without exposing production data.",
       "status": "production",
-      "period": "Jan 2024 – Sep 2024",
-      "impact": "Reduced data load time by 45%, decreased error rate from 2% to 0.1%, enabled real-time analytics",
-      "technologies": ["Python", "SQL", "ETL", "Data Modeling", "Tableau"],
+      "period": "2024",
+      "impact": "Eliminated security risks in BI migration testing, enabled comprehensive validation in isolated environments",
+      "technologies": ["Java", "SQL", "Database APIs", "Data Masking"],
       "features": [
-        "Incremental delta processing for optimized data sync",
-        "Multi-source data consolidation (APIs, Databases, Files)",
-        "Data quality validation with automated cleansing",
-        "Scheduled batch processing with dependency management",
-        "Real-time dashboards reflecting data freshness",
-        "Fail-safe mechanisms with automatic recovery"
+        "Automated client schema extraction and replication",
+        "Dummy data generation maintaining schema integrity",
+        "Internal environment deployment for secure testing",
+        "Table structure and relationship preservation",
+        "Support for complex schema dependencies",
+        "Compliance with data security and privacy policies"
       ],
-      "highlights": ["45% faster loading", "0.1% error rate", "500K records/day", "Real-time sync"]
+      "highlights": ["Production-safe testing", "Schema preservation", "Security-first", "Comprehensive validation"]
     },
     {
-      "title": "Tableau Analytics Dashboard Suite",
-      "description": "Comprehensive multi-tier analytics dashboard ecosystem serving executive, management, and operational stakeholders",
-      "status": "active",
-      "period": "Jun 2024 – Present",
-      "impact": "Enabled data-driven decisions for 50+ stakeholders, reduced report generation time from 2 hours to 5 minutes",
-      "technologies": ["Tableau", "SQL", "Data Modeling", "DAX", "Performance Optimization"],
+      "title": "AI-Driven BI Migration Research (R&D)",
+      "description": "Early-stage research project on AI-powered BI migration solutions using Python, LangGraph, and multi-agent workflows. Focus on automation feasibility and orchestrating intelligent report conversion.",
+      "status": "in-progress",
+      "period": "2026 – Present",
+      "impact": "Pioneering AI-assisted BI migration capabilities, transforming manual processes into intelligent workflows",
+      "technologies": ["Python", "LangGraph", "Multi-Agent Workflows", "AI Models", "Metadata Processing"],
       "features": [
-        "Executive dashboards with KPI tracking and trend analysis",
-        "Real-time operational metrics with drill-down capabilities",
-        "Custom calculations and LOD expressions",
-        "Performance optimizations achieving sub-second query times",
-        "Row-level security for stakeholder-specific views",
-        "Mobile-responsive design for on-the-go analytics"
+        "Multi-agent workflow orchestration using LangGraph for intelligent decision-making",
+        "AI model integration for automated report conversion and validation",
+        "Structured BI metadata preparation for LLM processing",
+        "Feasibility prototyping for automation scenarios",
+        "Cross-functional collaboration using Git and CI/CD",
+        "Production-ready feature delivery pipeline"
       ],
-      "highlights": ["50+ stakeholders", "5min reports", "Real-time KPIs", "Mobile-ready"]
+      "highlights": ["Multi-agent workflows", "LangGraph orchestration", "AI automation", "Future-focused innovation"]
     }
   ],
   
@@ -159,17 +159,58 @@
   },
   
   "skills": {
-    "backend": ["Java", "Python", "TypeScript", "REST APIs", "Spring Boot", "Microservices"],
-    "data_bi": ["SQL", "Data Modeling", "Power BI", "Tableau", "Qlik Sense", "BI Automation"],
-    "ai_automation": ["LangGraph", "AI Workflow Orchestration", "Automation Systems"],
-    "practices": ["CI/CD", "Git", "Enterprise Development", "System Design"]
+    "languages": ["Java", "Python", "TypeScript", "SQL"],
+    "backend_frameworks": ["Java Backend Development", "API Design", "Rule-Based Processing Engines", "Automation Utilities", "LangGraph"],
+    "data_database": ["Relational Databases", "Metadata Modeling", "Schema Replication", "Data Lineage", "BI Metadata Extraction (Tableau, Power BI, Qlik)"],
+    "ai_innovation": ["AI-Assisted Analysis", "Multi-Agent Workflows", "Structured Metadata for LLMs", "Feasibility Prototyping"],
+    "tools_platforms": ["Tableau", "Power BI Service", "Qlik Sense", "Git", "CI/CD Pipelines"],
+    "practices": ["Enterprise Development", "System Design", "Automation Architecture"]
   },
   
   "education": [
     {
-      "degree": "Bachelor's Of Technology",
-      "institution": "Rajiv Gandhi Proudyogiki Vishwavidyalaya",
-      "period": "2019 – 2023"
+      "degree": "Bachelor of Technology",
+      "institution": "Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV)",
+      "period": "2019 – 2023",
+      "description": "Comprehensive technical foundation in computer science and engineering"
+    }
+  ],
+  
+  "certifications": [
+    {
+      "certification": "Microsoft Certified: Azure Administrator Associate",
+      "issuer": "Microsoft",
+      "category": "Cloud & DevOps"
+    },
+    {
+      "certification": "Microsoft Certified: Generative AI Design",
+      "issuer": "Microsoft",
+      "category": "AI & Innovation"
+    },
+    {
+      "certification": "Power BI Certification",
+      "issuer": "Microsoft",
+      "category": "Data & BI"
+    },
+    {
+      "certification": "Tableau Bootcamp",
+      "issuer": "Tableau",
+      "category": "Data & BI"
+    },
+    {
+      "certification": "SQL Certification",
+      "issuer": "HackerRank",
+      "category": "Programming"
+    },
+    {
+      "certification": "Java Certification",
+      "issuer": "HackerRank",
+      "category": "Programming"
+    },
+    {
+      "certification": "Python Certification",
+      "issuer": "Cisco",
+      "category": "Programming"
     }
   ],
   
@@ -211,7 +252,7 @@
     ],
     "copyright": "© 2026 Archit Verma. All rights reserved.",
     "version": "1.1.0",
-    "build_date": "2026-02-11"
+    "build_date": "2026-02-14"
   },
   
   "ui": {
